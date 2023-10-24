@@ -8,7 +8,7 @@ package api.training_for_green;
  *
  * @author ThomasAndres
  */
-public abstract class ConnectionString {
+public class ConnectionString {
     private String name = "StdConnection";
     private String port="5432";
     private String username="postgres";
@@ -19,6 +19,10 @@ public abstract class ConnectionString {
 
     protected ConnectionString(String name) {
         this.setName(name);
+    }
+
+    ConnectionString() {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public final String getName() {
