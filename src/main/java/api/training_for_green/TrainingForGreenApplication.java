@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,13 +18,14 @@ public class TrainingForGreenApplication {
 	SpringApplication.run(TrainingForGreenApplication.class, args);
     }
         
-    
+    @CrossOrigin(origins = "*")
     @GetMapping("/getAllQuestionAdmin")
     public List<Question> getAllQuestionAdmin(
     ) throws SQLException{
         return this.manager.getAllQuestionAdmin();
     }
     
+    @CrossOrigin(origins = "*")
     @GetMapping("/getAllQuestion")
     public List<QuestionWithText> getAllQuestion(
     ) throws SQLException{
