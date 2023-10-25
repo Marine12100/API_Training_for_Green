@@ -19,7 +19,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -32,12 +32,18 @@
                     <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
                     <version>2.1.0</version>
                 </dependency>
-		<!-- PSQL dependencies -->
+		<!-- PSQL dependencies
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
-        </dependency>
+        </dependency>-->
+		<dependency>
+			<groupId>dao</groupId>
+			<artifactId>Training_for_Green</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
