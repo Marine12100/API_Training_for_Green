@@ -70,7 +70,7 @@ public class MainManager {
         connect();
         Statement st = conn.createStatement();
         List<QuestionWithText> toReturn = new ArrayList<>();
-        ResultSet rs = st.executeQuery("SELECT questions.question, questions.reponsea, questions.reponseb, questions.reponsec, questions.reponsed, questions.reponsevraie, cours.Titre, cours.Contenu FROM questions,cours WHERE questions.id_3 = 1 and questions.id_1 = cours.id");
+        ResultSet rs = st.executeQuery("SELECT questions.question, questions.reponsea, questions.reponseb, questions.reponsec, questions.reponsed, questions.reponsevraie, cours.Titre, cours.Contenu FROM questions,cours WHERE questions.id_3 = 2 and questions.id_1 = cours.id");
         while (rs.next()) {
             Reponse a = new Reponse(1,rs.getString(2), ("a".equals(rs.getString(6))));
             Reponse b = new Reponse(2,rs.getString(3), ("b".equals(rs.getString(6))));
