@@ -44,6 +44,7 @@ public class MainManager {
         Statement st = conn.createStatement();
         List<Question> toReturn = new ArrayList<>();
         ResultSet rs = st.executeQuery("SELECT question, reponsea, reponseb, reponsec, reponsed, reponsevraie FROM questions WHERE id_3 = 1");
+        int id = 1;
         while (rs.next()) {
             Reponse a = new Reponse(1,rs.getString(2), ("a".equals(rs.getString(6))));
             Reponse b = new Reponse(2,rs.getString(3), ("b".equals(rs.getString(6))));
@@ -54,7 +55,8 @@ public class MainManager {
             list.add(b);
             list.add(c);
             list.add(d);
-            Question q = new Question(1, rs.getString(1));
+            Question q = new Question(id, rs.getString(1));
+            id++;
             q.setReponses(list);
             toReturn.add(q);
             //System.out.println(rs.getString(1));
@@ -71,6 +73,7 @@ public class MainManager {
         Statement st = conn.createStatement();
         List<QuestionWithText> toReturn = new ArrayList<>();
         ResultSet rs = st.executeQuery("SELECT questions.question, questions.reponsea, questions.reponseb, questions.reponsec, questions.reponsed, questions.reponsevraie, cours.Titre, cours.Contenu FROM questions,cours WHERE questions.id_3 = 2 and questions.id_1 = cours.id");
+        int id = 1;
         while (rs.next()) {
             Reponse a = new Reponse(1,rs.getString(2), ("a".equals(rs.getString(6))));
             Reponse b = new Reponse(2,rs.getString(3), ("b".equals(rs.getString(6))));
@@ -81,7 +84,8 @@ public class MainManager {
             list.add(b);
             list.add(c);
             list.add(d);
-            QuestionWithText q = new QuestionWithText(1, rs.getString(1));
+            QuestionWithText q = new QuestionWithText(id, rs.getString(1));
+            id++;
             q.setReponses(list);
             q.setCoursDesc(rs.getString(7));
             q.setTitreCours(rs.getString(8));
