@@ -1,6 +1,7 @@
 package api.training_for_green;
 
 import api.training_for_green.formater.Question;
+import api.training_for_green.formater.QuestionWithText;
 import java.sql.SQLException;
 import java.util.List;
 import org.springframework.boot.SpringApplication;
@@ -16,28 +17,16 @@ public class TrainingForGreenApplication {
 	SpringApplication.run(TrainingForGreenApplication.class, args);
     }
         
-        
-    @GetMapping("/getAllQuestion")
-    public List<Question> getAllPresets(
-    ){
-        return this.manager.getAllQuestion();
-    }
-    
-    @GetMapping("/getOneQuestion")
-    public List<Question> getOneQuestion(
-    ){
-        return this.manager.getOneQuestion();
-    }
-
-    @GetMapping("/getOneQuestionAdmin")
-    public List<Question> getOneQuestionAdmin(
-    ){
-        return this.manager.getOneQuestion();
-    }
     
     @GetMapping("/getAllQuestionAdmin")
     public List<Question> getAllQuestionAdmin(
     ) throws SQLException{
-        return this.manager.test();
+        return this.manager.getAllQuestionAdmin();
+    }
+    
+    @GetMapping("/getAllQuestion")
+    public List<QuestionWithText> getAllQuestion(
+    ) throws SQLException{
+        return this.manager.getAllQuestion();
     }
 }
